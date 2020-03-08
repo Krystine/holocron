@@ -37,7 +37,7 @@ import adafruit_lis3dh
 #                                          SETUP
 #-------------------------------------------------------------------------------------------
 WAV_FILE_NAME       = "test_room.wav"           # name of your wave file in top folder
-COLOR_WHITE         = (255, 255, 255)           # white light (or FFFFFF)
+COLOR_WHITE         = (255, 255, 255, 255)      # white light (or FFFFFF)
 COLOR_RED           = (255, 0, 0)               # red light
 MOVE_THRESH         = 100                       # threshold for determining if holocron moved
 NORM_BRIGHTNESS     = 0.5                       # brightness of LED while sound is off
@@ -59,9 +59,9 @@ PIX = neopixel.NeoPixel(board.NEOPIXEL, 1, brightness=0.1, auto_write=True)
 PIX.fill(COLOR_RED)                             # set color to red
 
 """ Set up NeoPixel Jewel """
-NUM_PIXELS = 14                                 # NeoPixel length (7 doesn't work for me?)
+NUM_PIXELS = 7                                  # NeoPixel length
 NEOPIXEL_PIN = board.D5                         # pin where Jewel is connected (D5 for this wing)
-JEWEL = neopixel.NeoPixel(NEOPIXEL_PIN, NUM_PIXELS, brightness=0.1, auto_write=True)
+JEWEL = neopixel.NeoPixel(NEOPIXEL_PIN, NUM_PIXELS, brightness=0.1, auto_write=True, pixel_order=neopixel.RGBW)
 
 JEWEL.fill(COLOR_WHITE)                         # turn on all NeoPixels in the jewel
 
